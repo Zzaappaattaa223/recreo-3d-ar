@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { MockTransitAdapter } from "../src/adapters/mockAdapter.js";
 import { BlindZoneHeuristic } from "../src/engine/blindZoneHeuristic.js";
+import { pointAtProgress } from "../src/engine/geo.js";
 import { MAX_EXTRAPOLATION_SEC, VehicleInterpolator } from "../src/engine/interpolator.js";
 import { MAX_SNAP_DISTANCE_METERS, matchPingToRoute } from "../src/engine/mapMatcher.js";
 import { RouteStore } from "../src/engine/routeStore.js";
@@ -51,8 +52,8 @@ describe("Etapa 1 — Spatial Engine & Blind Zone Heuristic", () => {
         vehicleId: "TEST-3",
         lineCode: "recreo",
         branch: "",
-        lat: -31.6104,
-        lon: -60.7082,
+        lat: -31.555,
+        lon: -60.718,
         reportedAtMs: 1000,
         rawBearingDeg: 0 // heading north -> Centro - Recreo (vuelta)
       },
@@ -65,8 +66,8 @@ describe("Etapa 1 — Spatial Engine & Blind Zone Heuristic", () => {
         vehicleId: "TEST-4",
         lineCode: "recreo",
         branch: "",
-        lat: -31.6104,
-        lon: -60.7082,
+        lat: -31.555,
+        lon: -60.718,
         reportedAtMs: 1000,
         rawBearingDeg: 180 // heading south -> Recreo - Centro (ida)
       },
@@ -78,16 +79,18 @@ describe("Etapa 1 — Spatial Engine & Blind Zone Heuristic", () => {
   it("calculates speed from consecutive pings, clamps at terminus, and freezes after 45 s", () => {
     const interp = new VehicleInterpolator(store, blindZone);
     const route = store.findRoute("recreo", "ida")!;
+    const p1 = pointAtProgress(route.polyline, 500);
+    const p2 = pointAtProgress(route.polyline, 620);
 
     interp.ingestPings([
       {
         vehicleId: "V-1",
         lineCode: "recreo",
         branch: "Recreo - Centro",
-        lat: -31.491,
-        lon: -60.7315,
+        lat: p1.lat,
+        lon: p1.lon,
         reportedAtMs: 10_000,
-        rawBearingDeg: 170
+        rawBearingDeg: p1.bearingDeg
       }
     ]);
     interp.ingestPings([
@@ -95,10 +98,10 @@ describe("Etapa 1 — Spatial Engine & Blind Zone Heuristic", () => {
         vehicleId: "V-1",
         lineCode: "recreo",
         branch: "Recreo - Centro",
-        lat: -31.492,
-        lon: -60.7312,
+        lat: p2.lat,
+        lon: p2.lon,
         reportedAtMs: 20_000,
-        rawBearingDeg: 170
+        rawBearingDeg: p2.bearingDeg
       }
     ]);
 

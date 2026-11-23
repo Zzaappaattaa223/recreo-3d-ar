@@ -173,7 +173,7 @@ export function App() {
             onSelectStop={setSelectedStopId}
           />
         ) : (
-          <ArXrayView routes={routes} vehicles={vehicles} />
+          <ArXrayView routes={routes} vehicles={vehicles} fallbackStop={selectedStop} />
         )}
 
         <aside

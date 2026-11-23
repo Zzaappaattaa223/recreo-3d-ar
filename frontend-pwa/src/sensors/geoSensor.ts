@@ -1,4 +1,4 @@
-export const MAX_GPS_ACCURACY_METERS = 50;
+export const MAX_GPS_ACCURACY_METERS = 150;
 
 export interface UserGeoPosition {
   lat: number;
