@@ -1,0 +1,12 @@
+{
+  "defaultWeatherFactor": 1.0,
+  "defaultTrafficFactor": 1.0,
+  "zones": {
+    "rn11-norte": {
+      "weekdayPeakFactor": 0.78,
+      "weekdayOffPeakFactor": 0.95,
+      "weekendFactor": 1.02,
+      "peakHours": [7, 8, 12, 13, 17, 18, 19]
+    }
+  }
+}

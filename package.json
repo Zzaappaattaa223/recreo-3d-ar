@@ -1,0 +1,16 @@
+{
+  "name": "recreo-3d-ar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend-pwa"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces",
+    "test": "npm test --workspaces --if-present",
+    "build": "npm run build --workspaces"
+  }
+}

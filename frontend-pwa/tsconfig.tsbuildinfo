@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/sensors/geosensor.ts","./src/sensors/orientationsensor.ts","./src/services/transitclient.ts","./src/utils/enuprojection.ts","./src/utils/localeta.ts","./src/views/arxrayview.tsx","./src/views/map3dview.tsx"],"version":"5.9.3"}

@@ -1,0 +1,182 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-60.7315, -31.4910],
+          [-60.7250, -31.5200],
+          [-60.7180, -31.5550],
+          [-60.7120, -31.5850],
+          [-60.7082, -31.6104],
+          [-60.7055, -31.6350],
+          [-60.7030, -31.6485]
+        ]
+      },
+      "properties": {
+        "kind": "route",
+        "lineCode": "recreo",
+        "branch": "Recreo - Centro",
+        "direction": "ida",
+        "blindZoneSegments": [
+          {
+            "startMeters": 6200,
+            "endMeters": 8600,
+            "zoneId": "rn11-norte"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-60.7030, -31.6485],
+          [-60.7055, -31.6350],
+          [-60.7082, -31.6104],
+          [-60.7120, -31.5850],
+          [-60.7180, -31.5550],
+          [-60.7250, -31.5200],
+          [-60.7315, -31.4910]
+        ]
+      },
+      "properties": {
+        "kind": "route",
+        "lineCode": "recreo",
+        "branch": "Centro - Recreo",
+        "direction": "vuelta",
+        "blindZoneSegments": [
+          {
+            "startMeters": 9000,
+            "endMeters": 11400,
+            "zoneId": "rn11-norte"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-60.7315, -31.4910],
+          [-60.7200, -31.5450],
+          [-60.7100, -31.5950],
+          [-60.7030, -31.6485]
+        ]
+      },
+      "properties": {
+        "kind": "route",
+        "lineCode": "recreo_semirrapido",
+        "branch": "Semirrapido - Centro",
+        "direction": "ida",
+        "blindZoneSegments": [
+          {
+            "startMeters": 4500,
+            "endMeters": 7000,
+            "zoneId": "rn11-norte"
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-60.7030, -31.6485],
+          [-60.7100, -31.5950],
+          [-60.7200, -31.5450],
+          [-60.7315, -31.4910]
+        ]
+      },
+      "properties": {
+        "kind": "route",
+        "lineCode": "recreo_semirrapido",
+        "branch": "Centro - Semirrapido",
+        "direction": "vuelta"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7315, -31.4910] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "REC-S1",
+        "name": "Plaza Recreo",
+        "lineCode": "recreo",
+        "branch": "Recreo - Centro",
+        "direction": "ida",
+        "sequence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7180, -31.5550] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "REC-S2",
+        "name": "RN 11 y Gorriti",
+        "lineCode": "recreo",
+        "branch": "Recreo - Centro",
+        "direction": "ida",
+        "sequence": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7082, -31.6104] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "REC-S3",
+        "name": "Av. Aristobulo del Valle 6500",
+        "lineCode": "recreo",
+        "branch": "Recreo - Centro",
+        "direction": "ida",
+        "sequence": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7030, -31.6485] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "REC-S4",
+        "name": "Terminal / Centro Santa Fe",
+        "lineCode": "recreo",
+        "branch": "Recreo - Centro",
+        "direction": "ida",
+        "sequence": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7030, -31.6485] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "SEMI-S1",
+        "name": "Terminal / Centro Santa Fe",
+        "lineCode": "recreo_semirrapido",
+        "branch": "Centro - Semirrapido",
+        "direction": "vuelta",
+        "sequence": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-60.7315, -31.4910] },
+      "properties": {
+        "kind": "stop",
+        "stopId": "SEMI-S2",
+        "name": "Plaza Recreo",
+        "lineCode": "recreo_semirrapido",
+        "branch": "Centro - Semirrapido",
+        "direction": "vuelta",
+        "sequence": 2
+      }
+    }
+  ]
+}
